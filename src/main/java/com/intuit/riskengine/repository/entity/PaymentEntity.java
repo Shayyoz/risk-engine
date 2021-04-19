@@ -1,8 +1,8 @@
 package com.intuit.riskengine.repository.entity;
 
+import com.intuit.riskengine.model.domain.PaymentStatus;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -24,6 +24,7 @@ public class PaymentEntity {
     private String payeeId;
     private String paymentMethodId;
     private PaymentStatus status;
+    private Double riskAssessment;
 
     public PaymentEntity() {
     }
@@ -82,5 +83,13 @@ public class PaymentEntity {
 
     public void setStatus(PaymentStatus status) {
         this.status = status;
+    }
+
+    public Double getRiskAssessment() {
+        return riskAssessment;
+    }
+
+    public void setRiskAssessment(Double riskAssessment) {
+        this.riskAssessment = riskAssessment;
     }
 }

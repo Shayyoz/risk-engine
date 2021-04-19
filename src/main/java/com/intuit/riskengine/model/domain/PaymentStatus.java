@@ -1,4 +1,4 @@
-package com.intuit.riskengine.repository.entity;
+package com.intuit.riskengine.model.domain;
 
 public enum PaymentStatus {
     PLACED("PLACED"),
