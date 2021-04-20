@@ -9,7 +9,7 @@ RUN mvn -f /home/app/pom.xml clean package
 #
 # Package stage
 #
-FROM openjdk:11-jre-slim
+FROM adoptopenjdk:11-jre-hotspot
 COPY --from=build /home/app/target/risk-engine-0.0.1-SNAPSHOT.jar /usr/local/lib/risk-engine-1.0.0.jar
 EXPOSE 8080
 ENTRYPOINT ["java","-jar","/usr/local/lib/risk-engine-1.0.0.jar"]

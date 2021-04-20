@@ -1,12 +1,7 @@
 package com.intuit.riskengine.listener;
 
 import com.intuit.riskengine.config.MQPaymentsConfig;
-import com.intuit.riskengine.mapper.PaymentMapper;
 import com.intuit.riskengine.model.domain.PaymentRequestDmn;
-import com.intuit.riskengine.model.dto.PaymentRequestDto;
-import com.intuit.riskengine.repository.entity.PaymentEntity;
-import com.intuit.riskengine.model.domain.PaymentStatus;
-import com.intuit.riskengine.repository.entity.PaymentsRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
@@ -16,7 +11,6 @@ import org.springframework.stereotype.Component;
 @Component
 @RequiredArgsConstructor
 public class PaymentsMQListener {
-    private final PaymentMapper paymentMapper = PaymentMapper.INSTANCE;
     @Autowired
     private RabbitTemplate template;
 
